@@ -17,15 +17,30 @@ After enabling GitHub Pages, the published URL will be: <https://cybersam13.gith
 - Responsive layout, keyboard-accessible controls, and reduced-motion support
 - No account, API key, backend, or build process required
 
-## Run Locally
+## Install and Run on Linux/macOS
 
-Open `index.html` in a browser. For clipboard support and a more production-like origin, serve the folder with any static file server, for example:
+This project is a static site and has no package installation step.
+
+1. Clone the repository:
 
 ```sh
-python -m http.server 8000
+git clone https://github.com/cybersam13/Ipid.git
+cd Ipid
 ```
 
-Then visit `http://localhost:8000`.
+2. Start a local web server:
+
+```sh
+python3 -m http.server 8000
+```
+
+3. Open the app in a browser:
+
+```text
+http://localhost:8000
+```
+
+You can also open `index.html` directly in a browser, but serving it through a local web server is recommended for clipboard access and a more realistic local environment.
 
 ## Deploy to GitHub Pages
 
