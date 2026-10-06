@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f5f4ef" />
+    <meta name="description" content="Resolve a URL to its current IPv4 and IPv6 DNS addresses with a fast, browser-based lookup." />
+    <meta property="og:title" content="Addressable — URL to IP lookup" />
+    <meta property="og:description" content="A clear, instant look at the IP addresses behind any domain." />
+    <meta property="og:type" content="website" />
+    <title>Addressable — URL to IP lookup</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="wordmark" href="#top" aria-label="Addressable home">
+        <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span>addressable<span class="wordmark-period">.</span></span>
+      </a>
+      <a class="source-link" href="https://github.com/cybersam13/Ipid" target="_blank" rel="noreferrer" aria-label="View source on GitHub">
+        <span class="source-dot" aria-hidden="true"></span>
+        <span>Open source</span>
+        <span aria-hidden="true">↗</span>
+      </a>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="page-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-line"></span> DNS LOOKUP TOOL <span class="eyebrow-index">01 / 01</span></p>
+          <h1 id="page-title">Every address<br />has a <span>destination.</span></h1>
+          <p class="hero-description">Trace a URL to the IP addresses it resolves to. Quick, clear, and right in your browser.</p>
+        </div>
+        <div class="hero-stamp" aria-hidden="true">
+          <span class="stamp-orbit stamp-orbit-one"></span>
+          <span class="stamp-orbit stamp-orbit-two"></span>
+          <span class="stamp-core"></span>
+          <span class="stamp-label">DNS<br />TRACE</span>
+        </div>
+      </section>
+
+      <section class="lookup-section" aria-labelledby="lookup-heading">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow section-eyebrow">THE LOOKUP</p>
+            <h2 id="lookup-heading">Where does it resolve?</h2>
+          </div>
+          <span class="live-label"><span></span> LIVE QUERY</span>
+        </div>
+
+        <form id="lookup-form" novalidate>
+          <label class="input-label" for="url-input">URL OR DOMAIN</label>
+          <div class="input-row">
+            <div class="input-wrap">
+              <span class="input-prefix" aria-hidden="true">https://</span>
+              <input id="url-input" name="url" type="text" inputmode="url" autocomplete="url" spellcheck="false" placeholder="example.com" aria-describedby="input-hint form-error" />
+              <button class="clear-button" id="clear-button" type="button" aria-label="Clear URL" title="Clear URL" hidden>×</button>
+            </div>
+            <button class="submit-button" id="submit-button" type="submit">
+              <span>Find IP address</span>
+              <span class="button-arrow" aria-hidden="true">↗</span>
+            </button>
+          </div>
+          <div class="form-meta">
+            <p id="input-hint">Paste a full URL or just a domain name.</p>
+            <p id="form-error" class="form-error" role="alert" hidden></p>
+          </div>
+        </form>
+
+        <div class="result-panel" id="result-panel" aria-live="polite" aria-busy="false">
+          <div class="result-topline">
+            <div class="result-status"><span class="status-indicator" id="status-indicator"></span><span id="result-status-text">READY WHEN YOU ARE</span></div>
+            <span id="lookup-time" class="lookup-time"></span>
+          </div>
+          <div id="result-content" class="result-content">
+            <div class="empty-state">
+              <span class="empty-glyph" aria-hidden="true">↳</span>
+              <p>Your results will appear here.</p>
+              <span>Enter a URL above to check its DNS records.</span>
+            </div>
+          </div>
+        </div>
+        <p class="privacy-note"><span aria-hidden="true">◈</span> Lookups are sent to Google Public DNS. Your browsing history is not stored by this page.</p>
+      </section>
+
+      <section class="details-grid" aria-label="About this lookup">
+        <article class="detail-item">
+          <span class="detail-number">01</span>
+          <h3>More than one answer</h3>
+          <p>A domain may point to several IPv4 or IPv6 addresses. We show every address returned in this lookup.</p>
+        </article>
+        <article class="detail-item">
+          <span class="detail-number">02</span>
+          <h3>A moment in time</h3>
+          <p>DNS answers can change by location, network, or time. A listed IP is not always the website’s only server.</p>
+        </article>
+        <article class="detail-item">
+          <span class="detail-number">03</span>
+          <h3>Built for clarity</h3>
+          <p>See A and AAAA records together, check their TTL, and copy an address with one click.</p>
+        </article>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <a class="wordmark footer-wordmark" href="#top">
+        <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span>addressable<span class="wordmark-period">.</span></span>
+      </a>
+      <p>A small utility for the curious. <span>Made to be forked.</span></p>
+      <span class="footer-year">DNS OVER HTTPS · 2026</span>
+    </footer>
+  </body>
+</html>
