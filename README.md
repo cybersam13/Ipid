@@ -42,6 +42,22 @@ http://localhost:8000
 
 You can also open `index.html` directly in a browser, but serving it through a local web server is recommended for clipboard access and a more realistic local environment.
 
+## Run from the Terminal
+
+The command-line version requires Node.js 18 or newer and does not open the GUI. From the project folder, run:
+
+```sh
+node lookup.mjs example.com
+```
+
+You can also provide a full URL:
+
+```sh
+node lookup.mjs https://example.com/page
+```
+
+It prints the A and AAAA records and their TTL values. The command sends DNS-over-HTTPS requests to Google Public DNS, just like the browser version.
+
 ## Deploy to GitHub Pages
 
 1. Create a GitHub repository and push these project files to its `main` branch.
@@ -65,6 +81,7 @@ Lookups are sent to Google Public DNS. Avoid entering URLs containing private in
 .
 ├── .github/workflows/pages.yml  # GitHub Pages deployment
 ├── app.js                       # Input validation and DNS lookups
+├── lookup.mjs                   # Terminal-based DNS lookup
 ├── favicon.svg                  # Site icon
 ├── index.html                   # Accessible page structure
 ├── styles.css                   # Responsive visual design
